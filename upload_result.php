@@ -16,4 +16,12 @@ $upload_dir='./abc/';
 if(!is_dir($upload_dir)){
     mkdir($upload_dir);
 }
+
+$upload_file1=$upload_dir.basename($f_name);
+
+if(move_uploaded_file($f_tmpname, $upload_file1)){
+    echo"업로드 되었습니다";
+}else{
+    echo"업로드 실패";
+}
 ?>
